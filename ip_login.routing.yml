@@ -1,0 +1,4 @@
+ip_login.ajaxloginrequest:
+  path: '/ip_login/login'
+  defaults:
+    _controller: '\Drupal\ip_login\LoginController::loginRequest'

@@ -1,0 +1,5 @@
+ip_login:
+  header: true
+  version: VERSION
+  js:
+    js/ip_login.js: {}

@@ -1,0 +1,28 @@
+<?php
+/**
+ * @file
+ * Hooks for IP login module
+ */
+
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * @param array $attachments
+ */
+
+function ip_login_page_attachments(array &$attachments) {
+  // Attach JS for anonymous users.
+  if (\Drupal::currentUser()->isAnonymous()) {
+    $url = Url::fromRoute('ip_login.ajaxloginrequest')->toString();
+    $attachments['#attached']['html_head'][] = [
+      [
+        '#tag' => 'script',
+        '#value' => 'var ipLogin = ' . json_encode(['callback' => $url])
+      ],
+      'ip_login_settings'
+    ];
+    $attachments['#attached']['library'][] = 'ip_login/ip_login';
+  }
+}

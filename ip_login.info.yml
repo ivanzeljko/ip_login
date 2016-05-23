@@ -1,0 +1,6 @@
+name: IP Login
+type: module
+description: 'Logs in users in automatically based on their IP address.'
+core: 8.x
+dependencies:
+  - field_ipaddress
