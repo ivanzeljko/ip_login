@@ -28,8 +28,8 @@ class LoginController extends ControllerBase {
     $ip = inet_pton($request->getClientIp());
 
     $query = \Drupal::entityQuery('user')
-      ->condition($field_name . '.ip_from', $ip, '>=')
-      ->condition($field_name . '.ip_to', $ip, '<=');
+      ->condition($field_name . '.ip_from', $ip, '<=')
+      ->condition($field_name . '.ip_to', $ip, '>=');
 
     $uids = $query->execute();
 
