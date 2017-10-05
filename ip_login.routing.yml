@@ -1,4 +1,8 @@
-ip_login.ajaxloginrequest:
-  path: '/ip_login/login'
+ip_login.loginquery:
+  path: '/ip_login/loginquery'
   defaults:
-    _controller: '\Drupal\ip_login\LoginController::loginRequest'
+    _controller: '\Drupal\ip_login\LoginController::loginQuery'
+ip_login.dologin:
+  path: '/ip_login/dologin'
+  defaults:
+    _controller: '\Drupal\ip_login\LoginController::loginProcess'

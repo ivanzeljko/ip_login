@@ -15,11 +15,12 @@ use Drupal\Core\Url;
 function ip_login_page_attachments(array &$attachments) {
   // Attach JS for anonymous users.
   if (\Drupal::currentUser()->isAnonymous()) {
-    $url = Url::fromRoute('ip_login.ajaxloginrequest')->toString();
+    $query_url = Url::fromRoute('ip_login.loginquery')->toString();
+    $login_url = Url::fromRoute('ip_login.dologin', [], ['query' => \Drupal::service('redirect.destination')->getAsArray()])->toString();
     $attachments['#attached']['html_head'][] = [
       [
         '#tag' => 'script',
-        '#value' => 'var ipLogin = ' . json_encode(['callback' => $url])
+        '#value' => 'var ipLogin = ' . json_encode(['query' => $query_url, 'dologin' => $login_url])
       ],
       'ip_login_settings'
     ];
