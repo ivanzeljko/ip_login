@@ -2,7 +2,11 @@ ip_login.loginquery:
   path: '/ip_login/loginquery'
   defaults:
     _controller: '\Drupal\ip_login\LoginController::loginQuery'
+  requirements:
+    _access: 'TRUE'    
 ip_login.dologin:
   path: '/ip_login/dologin'
   defaults:
     _controller: '\Drupal\ip_login\LoginController::loginProcess'
+  requirements:
+    _access: 'TRUE'    
