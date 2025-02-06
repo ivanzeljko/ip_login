@@ -1,3 +1,7 @@
+# IP Login Module
+
+<a href="https://smithery.ai/server/@ivanzeljko/ip_login"><img alt="Smithery Badge" src="https://smithery.ai/badge/@ivanzeljko/ip_login"></a>
+
 CONTENTS
 --------
 
